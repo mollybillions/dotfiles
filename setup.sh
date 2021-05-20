@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-exit 0
-
 command_exists() {
 	command -v "$@" >/dev/null 2>&1
 }
@@ -68,7 +66,7 @@ if [ ! -d "~/.oh-my-zsh" ]; then
 fi
 
 echo "Copying rest of configuration..."
-# cp ~/dotfiles/.zshrc ~/.zshrc
+cp ~/dotfiles/.zshrc ~/.zshrc
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 cp ~/dotfiles/.tmux.conf ~/.tmux.conf
 
