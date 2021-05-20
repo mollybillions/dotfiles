@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+exit 0
+
 command_exists() {
 	command -v "$@" >/dev/null 2>&1
 }
@@ -41,7 +43,7 @@ echo 'dependency install and setup...'
 
 if ! command_exists zsh; then
   sudo apt-get install -y zsh
-  chsh -s $(which zsh)
+  # chsh -s $(which zsh)
 fi
 
 if ! command_exists ag; then
@@ -66,7 +68,7 @@ if [ ! -d "~/.oh-my-zsh" ]; then
 fi
 
 echo "Copying rest of configuration..."
-cp ~/dotfiles/.zshrc ~/.zshrc
+# cp ~/dotfiles/.zshrc ~/.zshrc
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 cp ~/dotfiles/.tmux.conf ~/.tmux.conf
 
