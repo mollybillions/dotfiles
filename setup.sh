@@ -58,22 +58,10 @@ fi
 
 echo "Setting up oh-my-zsh..."
 if [ ! -d "~/.oh-my-zsh" ]; then
-    ZSH=${ZSH:-~/.oh-my-zsh}
-    REPO=${REPO:-ohmyzsh/ohmyzsh}
-    REMOTE=${REMOTE:-https://github.com/${REPO}.git}
-    BRANCH=${BRANCH:-master}
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-    git clone -c core.eol=lf -c core.autocrlf=false \
-    -c fsck.zeroPaddedFilemode=ignore \
-    -c fetch.fsck.zeroPaddedFilemode=ignore \
-    -c receive.fsck.zeroPaddedFilemode=ignore \
-    --depth=1 --branch "$BRANCH" "$REMOTE" "$ZSH" || {
-        fmt_error "git clone of oh-my-zsh repo failed"
-        exit 1
-    }
-
-    # fzf-tab
-    git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
+  # fzf-tab
+  git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
 fi
 
