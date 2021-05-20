@@ -101,5 +101,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [ $SPIN ]; then
-    export PROMPT=$(printf '\033[34m')"⥁ "$(printf '\033[m')$PROMPT
+    export PROMPT=$(echo $PROMPT | sed 's/➜/⥁/g')
 fi
