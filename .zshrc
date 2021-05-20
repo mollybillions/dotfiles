@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fzf-tab)
 
-source $ZSH/oh-my-zsh.sh
+source /home/spin/.oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
 
@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='emacs'
+# export EDITOR='emacs'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
