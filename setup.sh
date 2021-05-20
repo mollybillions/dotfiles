@@ -75,11 +75,10 @@ if [ ! -d "~/.oh-my-zsh" ]; then
     # fzf-tab
     git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
-    # zsh config
-    cp ~/dotfiles/.zshrc ~/.zshrc
 fi
 
 echo "Copying rest of configuration..."
+cp ~/dotfiles/.zshrc ~/.zshrc
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 cp ~/dotfiles/.tmux.conf ~/.tmux.conf
 
