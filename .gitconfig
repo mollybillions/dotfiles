@@ -42,6 +42,6 @@
 	lo = log --oneline -n 22
 	pr = pull --rebase
 	files = diff --name-only master
-	update = !git-update-branch
+	update = "!gupdate() { git branch --show-current | xargs git pull --rebase origin }; gupdate"
 	remaster = rebase origin/master
 	wut = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
