@@ -1,7 +1,5 @@
 [core]
 	commitGraph = true
-	pager = diff-so-fancy | less --tabs=4 -RFX
-	editor = emacsclient -create-frame --alternate-editor=""
 [diff]
 	algorithm = patience
 [gc]
