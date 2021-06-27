@@ -56,6 +56,24 @@ if ! command_exists ranger; then
   sudo apt-get install -y ranger
 fi
 
+if ! command_exists batcat; then
+  sudo apt-get install -y bat
+fi
+
+if ! command_exists wget; then
+  sudo apt-get install -y wget
+fi
+
+if ! command_exists delta: then
+  local tmp_deb="$(mktemp)"
+  local src_url="https://github.com/barnumbirr/delta-debian/releases/download/0.6.0-1/delta-diff_0.6.0-1_amd64_debian_buster.deb"
+
+  wget -O $tmp_deb $src_url &&
+  sudo dpkg -i $tmp_deb &&
+  { rm -f $tmp_deb; true; } ||
+  { rm -f $tmp_deb; false; }
+fi
+
 echo "Setting up oh-my-zsh..."
 if [ ! -d "~/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
