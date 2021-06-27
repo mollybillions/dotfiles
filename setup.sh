@@ -52,9 +52,9 @@ if ! command_exists fzf; then
   sudo apt-get install -y fzf
 fi
 
-if ! command_exists exa; then
-  sudo apt-get install -y exa
-fi
+#if ! command_exists exa; then
+# sudo apt-get install -y exa
+#fi
 
 if ! command_exists ranger; then
   sudo apt-get install -y ranger
