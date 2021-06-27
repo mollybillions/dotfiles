@@ -1,51 +1,50 @@
 [user]
-	name = Molly Brasington
-	email = 68570851+mollybillions@users.noreply.github.com
+  name = Molly Brasington
+  email = 68570851+mollybillions@users.noreply.github.com
 [pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
 [delta]
-    plus-style = "syntax #012800"
-    minus-style = "syntax #340001"
-    syntax-theme = Monokai Extended
-    navigate = true
+  plus-style = "syntax #012800"
+  minus-style = "syntax #340001"
+  syntax-theme = Monokai Extended
+  navigate = true
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [core]
-	commitGraph = true
+  commitGraph = true
 [diff]
-	algorithm = patience
+  algorithm = patience
 [gc]
-	writeCommitGraph = true
+  writeCommitGraph = true
 [color]
-	ui = true
+  ui = true
 [alias]
-	s = status
-	d = diff
-	co = checkout
-	br = branch
-	last = log -1 HEAD
-	back = checkout @{-1}
-	unstage = reset HEAD --
-	cane = commit --amend --no-edit
-	lo = log --oneline -n 22
-	pr = pull --rebase
-	files = diff --name-only master
-	update = !git-update-branch
-	remaster = rebase origin/master
-	wut = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
-	clean = 
+  s = status
+  d = diff
+  co = checkout
+  br = branch
+  last = log -1 HEAD
+  back = checkout @{-1}
+  unstage = reset HEAD --
+  cane = commit --amend --no-edit
+  lo = log --oneline -n 22
+  pr = pull --rebase
+  files = diff --name-only master
+  update = !git-update-branch
+  remaster = rebase origin/master
+  wut = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
 [protocol]
-	version = 2
+  version = 2
 [url "https://github.com/Shopify/"]
-	insteadOf = git@github.com:Shopify/
-	insteadOf = git@github.com:shopify/
-	insteadOf = ssh://git@github.com/Shopify/
-	insteadOf = ssh://git@github.com/shopify/
+  insteadOf = git@github.com:Shopify/
+  insteadOf = git@github.com:shopify/
+  insteadOf = ssh://git@github.com/Shopify/
+  insteadOf = ssh://git@github.com/shopify/
