@@ -68,9 +68,10 @@ if ! command_exists wget; then
   sudo apt-get install -y wget
 fi
 
-#if ! command_exists fd; then
-#  sudo apt-get install -y fd
-#fi
+if ! command_exists fdfind; then
+  sudo apt-get install -y fd-find
+  ln -s $(which fdfind) ~/.local/bin/fd
+fi
 
 if ! command_exists delta; then
   local tmp_deb="$(mktemp)"
