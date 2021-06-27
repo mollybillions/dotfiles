@@ -61,6 +61,7 @@ fi
 
 if ! command_exists batcat; then
   sudo apt-get install -y bat
+   mkdir -p  ~/.local/bin 
   ln -s $(which batcat) ~/.local/bin/bat
 fi
 
@@ -70,17 +71,12 @@ fi
 
 if ! command_exists fdfind; then
   sudo apt-get install -y fd-find
+  mkdir -p  ~/.local/bin 
   ln -s $(which fdfind) ~/.local/bin/fd
 fi
 
 if ! command_exists delta; then
-  local tmp_deb="$(mktemp)"
-  local src_url="https://github.com/barnumbirr/delta-debian/releases/download/0.6.0-1/delta-diff_0.6.0-1_amd64_debian_testing.deb"
-
-  wget -O $tmp_deb $src_url &&
-  sudo dpkg -i $tmp_deb &&
-  { rm -f $tmp_deb; true; } ||
-  { rm -f $tmp_deb; false; }
+  cargo install git-delta
 fi
 
 if ! command_exists exa; then
