@@ -41,7 +41,10 @@ echo 'dependency install and setup...'
 
 if ! command_exists zsh; then
   sudo apt-get install -y zsh
-  # chsh -s $(which zsh)
+fi
+
+if ! command_exists cargo; then
+ sudo apt-get install -y cargo
 fi
 
 if ! command_exists ag; then
@@ -52,16 +55,13 @@ if ! command_exists fzf; then
   sudo apt-get install -y fzf
 fi
 
-if ! command_exists cargo; then
- sudo apt-get install -y cargo
-fi
-
 if ! command_exists ranger; then
   sudo apt-get install -y ranger
 fi
 
 if ! command_exists batcat; then
   sudo apt-get install -y bat
+  ln -s $(which batcat) ~/.local/bin/bat
 fi
 
 if ! command_exists wget; then
@@ -81,6 +81,10 @@ if ! command_exists delta; then
   sudo dpkg -i $tmp_deb &&
   { rm -f $tmp_deb; true; } ||
   { rm -f $tmp_deb; false; }
+fi
+
+if ! command_exists exa; then
+  cargo install exa
 fi
 
 echo "Setting up oh-my-zsh..."
