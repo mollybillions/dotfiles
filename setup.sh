@@ -72,7 +72,7 @@ fi
 #  sudo apt-get install -y fd
 #fi
 
-if ! command_exists delta: then
+if ! command_exists delta; then
   local tmp_deb="$(mktemp)"
   local src_url="https://github.com/barnumbirr/delta-debian/releases/download/0.6.0-1/delta-diff_0.6.0-1_amd64_debian_testing.deb"
 
