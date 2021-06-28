@@ -102,7 +102,7 @@ echo "Reportify setup..."
 if [[ "$SPIN_REPO_SOURCE_PATH" = "/src/github.com/shopify/shopify" ]]
 then
   cd "$SPIN_REPO_SOURCE_PATH"
-  # This will always be the author of the cartridge, so for the shopify-reportify-config it will be shameelabd (do not modify this)
+  # This will always be the author of the cartridge
   # Do **NOT** replace this username with your username.
   cartridge insert mollybillions/finances-overview-dev
   . /cartridges/finances-overview-dev/setup.sh
