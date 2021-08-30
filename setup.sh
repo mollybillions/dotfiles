@@ -39,6 +39,8 @@ fi
 
 echo 'dependency install and setup...'
 
+sudo apt-get update
+
 if ! command_exists zsh; then
   sudo apt-get install -y zsh
 fi
