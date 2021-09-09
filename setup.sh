@@ -62,8 +62,9 @@ if ! command_exists ranger; then
 fi
 
 if ! command_exists batcat; then
-  sudo apt-get install -y bat
-   mkdir -p  ~/.local/bin 
+  # There's an issue with the bat package in the repos, it conflicts with ripgrep
+  sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep
+  mkdir -p  ~/.local/bin 
   ln -s $(which batcat) ~/.local/bin/bat
 fi
 
@@ -98,17 +99,5 @@ echo "Copying rest of configuration..."
 cp ~/dotfiles/.zshrc ~/.zshrc
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 cp ~/dotfiles/.tmux.conf ~/.tmux.conf
-
-echo "Reportify setup..."
-# Only run nested steps in Spin + shopify/shopify workspaces.
-if [[ "$SPIN_REPO_SOURCE_PATH" = "/src/github.com/shopify/shopify" ]]
-then
-  cd "$SPIN_REPO_SOURCE_PATH"
-  # This will always be the author of the cartridge
-  # Do **NOT** replace this username with your username.
-  cartridge insert mollybillions/finances-overview-dev
-  . /cartridges/finances-overview-dev/setup.sh
-  restart
-  fi
 
 echo "DONE!"
