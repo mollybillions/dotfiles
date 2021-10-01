@@ -37,6 +37,9 @@ if ! [ $SPIN ]; then
     exit 1
 fi
 
+/opt/spin/bin/cartridge insert mollybillions/sp-tools
+~/.data/cartridges/sp-tools/setup.sh
+
 echo 'dependency install and setup...'
 
 sudo apt-get update
