@@ -15,6 +15,7 @@
   diffFilter = delta --color-only
 [core]
   commitGraph = true
+  editor = emacs
 [diff]
   algorithm = patience
 [gc]
